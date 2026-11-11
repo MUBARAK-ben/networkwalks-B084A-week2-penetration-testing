@@ -131,4 +131,88 @@ at any time without notice.
                                                                              
 ┌──(kali㉿kali)-[~]
 └─$ 
+
+                                                                          
+┌──(kali㉿kali)-[~]
+└─$ whatweb networkwalks.com
+http://networkwalks.com [301 Moved Permanently] Apache, Cookies[__wpdm_client], Country[UNITED STATES][US], HTTPServer[Apache], HttpOnly[__wpdm_client], IP[192.232.216.135], RedirectLocation[https://networkwalks.com/], UncommonHeaders[permissions-policy,x-redirect-by,upgrade,referrer-policy,x-endurance-cache-level,x-nginx-cache]
+https://networkwalks.com [200 OK] Apache, Bootstrap[7.1.4], Cookies[__wpdm_client], Country[UNITED STATES][US], Email[info@networkwalks.com], Frame, Google-Tag-Manager, HTML5, HTTPServer[Apache], HttpOnly[__wpdm_client], IP[192.232.216.135], JQuery[3.7.1], MetaGenerator[WordPress 7.1.4,WordPress Download Manager 3.3.76], Open-Graph-Protocol[website], Script[4684NR-IPIB&amp;pidnVar2=50511&amp;prtVar2=7&amp;scvVar2=12,application/json,application/ld+json,module,speculationrules,text/javascript], Title[Networkwalks Academy], UncommonHeaders[permissions-policy,link,upgrade,referrer-policy,x-endurance-cache-level,x-nginx-cache], WordPress[7.1.4]
+https://networkwalks.com/ [200 OK] Apache, Bootstrap[7.1.4], Country[UNITED STATES][US], Email[info@networkwalks.com], Frame, Google-Tag-Manager, HTML5, HTTPServer[Apache], IP[192.232.216.135], JQuery[3.7.1], MetaGenerator[WordPress 7.1.4,WordPress Download Manager 3.3.76], Open-Graph-Protocol[website], Script[4684NR-IPIB&amp;pidnVar2=50511&amp;prtVar2=7&amp;scvVar2=12,application/json,application/ld+json,module,speculationrules,text/javascript], Title[Networkwalks Academy], UncommonHeaders[permissions-policy,link,upgrade,referrer-policy,x-endurance-cache-level,x-nginx-cache], WordPress[7.1.4]
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ 
+┌──(kali㉿kali)-[~]
+└─$ nslookup networkwalks.com
+Server:         8.8.8.8
+Address:        8.8.8.8#53
+
+Non-authoritative answer:
+Name:   networkwalks.com
+Address: 192.232.216.135
+
+┌──(kali㉿kali)-[~]
+└─$ curl -I https://networkwalks.com
+HTTP/2 200 
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"), private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://networkwalks.com/wp-json/>; rel="https://api.w.org/", <https://networkwalks.com/wp-json/wp/v2/pages/53>; rel="alternate"; title="JSON"; type="application/json", <https://networkwalks.com/>; rel=shortlink
+set-cookie: __wpdm_client=a792724254427f5db42a8a18c77acdf2; path=/; domain=networkwalks.com; secure; HttpOnly
+referrer-policy: no-referrer-when-downgrade
+x-endurance-cache-level: 0
+x-nginx-cache: WordPress
+content-type: text/html; charset=UTF-8
+date: Wed, 11 Nov 2026 14:15:23 GMT
+server: Apache
+──(kali㉿kali)-[~]
+└─$ wafw00f networkwalks.com
+
+                   ______
+                  /      \
+                 (  Woof! )
+                  \  ____/                      )
+                  ,,                           ) (_
+             .-. -    _______                 ( |__|
+            ()``; |==|_______)                .)|__|
+            / ('        /|\                  (  |__|
+        (  /  )        / | \                  . |__|
+         \(_)_))      /  |  \                   |__|
+
+                    ~ WAFW00F : v2.4.2 ~
+    The Web Application Firewall Fingerprinting Toolkit
+    
+[*] Checking https://networkwalks.com
+[+] The site https://networkwalks.com is behind ModSecurity (SpiderLabs) WAF.
+[~] Number of requests: 2
+                                                                             
+┌──(kali㉿kali)-[~]
+─(kali㉿kali)-[~]
+└─$ dnsrecon -d networkwalks.com
+2026-11-11T09:20:28.512959-0500 INFO Starting enumeration for domain: networkwalks.com
+2026-11-11T09:20:28.514744-0500 INFO std: Performing General Enumeration against: networkwalks.com...
+2026-11-11T09:20:29.352956-0500 ERROR No answer for DNSSEC query for networkwalks.com
+2026-11-11T09:20:29.969163-0500 INFO     SOA ns6135.hostgator.com 50.87.144.87
+2026-11-11T09:20:31.917981-0500 INFO     NS ns6136.hostgator.com 192.232.216.131
+2026-11-11T09:20:32.643524-0500 INFO     Bind Version for 192.232.216.131 "9.16.23-RH"
+2026-11-11T09:20:32.644488-0500 INFO     NS ns6135.hostgator.com 50.87.144.87
+2026-11-11T09:20:33.245452-0500 INFO     Bind Version for 50.87.144.87 "9.16.23-RH"
+2026-11-11T09:20:34.494668-0500 INFO     MX mail.networkwalks.com 192.232.216.135
+2026-11-11T09:20:34.836415-0500 INFO     A networkwalks.com 192.232.216.135
+2026-11-11T09:20:38.505315-0500 INFO     TXT networkwalks.com v=spf1 +a +mx +ip4:50.87.144.87 +include:websitewelcome.com ~all
+2026-11-11T09:20:38.506479-0500 INFO     TXT networkwalks.com google-site-verification=rr04eRmqHoWY3XemnizDNVK4q75X-Ij-mjgEeg-UsYI
+2026-11-11T09:20:40.036963-0500 INFO Enumerating SRV Records
+2026-11-11T09:20:47.694691-0500 INFO     SRV _autodiscover._tcp.networkwalks.com cpanelemaildiscovery.cpanel.net 184.94.203.11 443
+2026-11-11T09:20:47.695680-0500 INFO     SRV _autodiscover._tcp.networkwalks.com cpanelemaildiscovery.cpanel.net 184.94.203.9 443
+2026-11-11T09:20:47.696142-0500 INFO     SRV _autodiscover._tcp.networkwalks.com cpanelemaildiscovery.cpanel.net 184.94.203.15 443
+2026-11-11T09:20:47.697586-0500 INFO     SRV _autodiscover._tcp.networkwalks.com cpanelemaildiscovery.cpanel.net 184.94.204.11 443
+2026-11-11T09:20:47.698037-0500 INFO     SRV _autodiscover._tcp.networkwalks.com cpanelemaildiscovery.cpanel.net 184.94.203.14 443
+2026-11-11T09:20:47.699098-0500 INFO     SRV _autodiscover._tcp.networkwalks.com cpanelemaildiscovery.cpanel.net 184.94.204.14 443
+2026-11-11T09:20:47.699627-0500 INFO     SRV _autodiscover._tcp.networkwalks.com cpanelemaildiscovery.cpanel.net 184.94.204.15 443
+2026-11-11T09:20:47.700682-0500 INFO     SRV _autodiscover._tcp.networkwalks.com cpanelemaildiscovery.cpanel.net 184.94.204.9 443
+2026-11-11T09:20:48.127713-0500 INFO 8 Records Found
+2026-11-11T09:20:48.128666-0500 INFO Completed enumeration for domain: networkwalks.com
+
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ 
+
+                                   
   
